@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - springtutorial@localhost" uuid="954ae962-9e46-45f5-91a4-aa239baa0ed9">
+    <database-info product="MySQL" version="5.7.11-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.2">
+      <schema id="1" name="springtutorial"/>
+      <table id="2" parent="1" name="messages"/>
+      <table id="3" parent="1" name="offers"/>
+      <table id="4" parent="1" name="users"/>
+      <column id="5" parent="2" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="6" parent="2" name="subject">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="7" parent="2" name="content">
+        <mandatory>1</mandatory>
+        <data-type>varchar(1000)</data-type>
+      </column>
+      <column id="8" parent="2" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="9" parent="2" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(60)</data-type>
+      </column>
+      <column id="10" parent="2" name="username">
+        <mandatory>1</mandatory>
+        <data-type>varchar(60)</data-type>
+      </column>
+      <key id="11" parent="2" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="12" parent="2" name="fk_messages_users1">
+        <columns>username</columns>
+        <ref-key>users.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="13" parent="3" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="14" parent="3" name="text">
+        <mandatory>1</mandatory>
+        <data-type>text</data-type>
+      </column>
+      <column id="15" parent="3" name="username">
+        <mandatory>1</mandatory>
+        <data-type>varchar(60)</data-type>
+      </column>
+      <key id="16" parent="3" name="PRIMARY">
+        <columns>id
+username</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="17" parent="3" name="fk_offers_users">
+        <columns>username</columns>
+        <ref-key>users.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+      <column id="18" parent="4" name="username">
+        <mandatory>1</mandatory>
+        <data-type>varchar(60)</data-type>
+      </column>
+      <column id="19" parent="4" name="password">
+        <data-type>varchar(80)</data-type>
+      </column>
+      <column id="20" parent="4" name="authority">
+        <data-type>varchar(45)</data-type>
+      </column>
+      <column id="21" parent="4" name="name">
+        <mandatory>1</mandatory>
+        <data-type>varchar(100)</data-type>
+      </column>
+      <column id="22" parent="4" name="enabled">
+        <data-type>tinyint(1)</data-type>
+        <default-expression>&apos;1&apos;</default-expression>
+      </column>
+      <column id="23" parent="4" name="email">
+        <mandatory>1</mandatory>
+        <data-type>varchar(60)</data-type>
+      </column>
+      <key id="24" parent="4" name="PRIMARY">
+        <columns>username</columns>
+        <primary>1</primary>
+      </key>
+    </database-model>
+  </data-source>
+</component>

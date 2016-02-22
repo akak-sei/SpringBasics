@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/cache"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+                    http://www.springframework.org/schema/context
+                    http://www.springframework.org/schema/context/spring-context-4.0.xsd http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache.xsd">
+
+    <context:annotation-config></context:annotation-config>
+
+    <context:property-placeholder
+            location="src\com\kak\springbasics\props\jdbc.properties" />
+
+    <bean id="robot" class="com.kak.springbasics.spel.Robot">
+        <property name="id" value="#{'My name is : ' +'Arnie'}"></property>
+        <property name="speech" value="#{'hello ' +robotText.getText()}"></property>
+        <property name="secretName" value="#{'secret name length is ' +robot.getSecretName()?.length()}"></property>
+        <property name="dbUser" value="${jdbc.user}"></property>
+        <property name="dbPassword" value="${jdbc.password}"></property>
+    </bean>
+
+    <bean id="robotText" class="com.kak.springbasics.spel.RandomText">
+    </bean>
+
+    <bean id="offersDAO" class="com.kak.springbasics.data.OffersDAO">
+    </bean>
+
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"
+          destroy-method="close">
+        <property name="username" value="${jdbc.user}"></property>
+        <property name="password" value="${jdbc.password}"></property>
+        <property name="url" value="${jdbc.url}"></property>
+        <property name="driverClassName" value="${jdbc.driver}"></property>
+    </bean>
+
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource"></property>
+    </bean>
+
+    <tx:annotation-driven />
+
+</beans>
