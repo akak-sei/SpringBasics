@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Udemy Tutorial</title>
+    <link rel="stylesheet" href="style.css">
+
+    <script src="js/simpleJSExamples.js"></script>
+    <script src="js/objectJSExample.js"></script>
+    <script src="js/domJSExample.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <p id="text">This is the main box</p>
+    </div>
+
+    <h1>Title news</h1>
+    <h3>Today's news</h3>
+    <div id="news1">Nothing special today</div>
+
+    <script>
+        //testSimpleDom();
+    </script>
+
+    <form id="form1" onsubmit="">
+        Title: <input type="text" id="title1" size="25"> <br /> <br />
+        Description: <input type="text" id="desc1" size="55"> <br /> <br />
+        <input type="submit" value="Submit" onclick="writeFormContent();">
+    </form>
+
+    <div id="div1"></div><br />
+    <input type="button" value="Click Me!" onclick="testCssChange();">
+
+    <form>
+        <input type="button" value="Test Click Event" id="onClickTestButton" onclick="testOnClick();">
+    </form>
+    <script>
+        var buttonTest = document.getElementById ("onClickTestButton");
+        buttonTest.onclick = function () {
+            alert ("generated an event");
+        }
+    </script>
+
+    <form onsubmit="window.alert('your form has been submitted')">
+        Full Name: <input type="text" onfocus="window.alert('please type your name')"><br />
+        Address: <input type="text" onblur="window.alert('please come back')"><br />
+        <input type="submit" value="Test OnSubmit">
+    </form>
+
+    <input type="button" value="Test Event Listener" id="eventListenerTest">
+
+    <script>
+        initEventListener();
+    </script>
+
+</body>
+</html>

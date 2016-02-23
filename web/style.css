@@ -18,3 +18,23 @@
     width: 450px;
     height: 110px;
 }
+
+#div1 {
+    background-color: #000000;
+    height: 130px;
+    width: 130px;
+}
+
+#leftbox{
+    float: left;
+    padding: 20px;
+    border: 2px solid green;
+}
+
+#rightbox{
+    float: right;
+    width: 250px;
+    margin-left: 20px;
+    padding: 20px;
+    border: 2px solid red;
+}
