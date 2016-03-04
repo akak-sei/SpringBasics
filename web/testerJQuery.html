@@ -10,17 +10,57 @@
     <script>
         $(document).ready(function(){
             $('#button').click(function() {
-                $('#div1').hide(1000);
+                //$('#div1').hide(1000);
+                //$('#div1').html('hello');
+                $('#div1').toggle(500);
             });
+            $('#link').hover(function() {
+                $('#div1').toggle(500);
+            });
+            $('#callbackButton').click(function() {
+                $('p').toggle(500, function(){
+                    alert ("callback test");
+                });
+            });
+            $('#cssButton').click(function() {
+                $("p").css("font-size", "10px");
+                //$("p").append("hello");
+                //$("p").prepend("hello");
+            });
+            $('p').click(function() {
+                $(this).css("color", "red");
+            })
         });
+
+
+        function toggle (element, speed) {
+            $(element).toggle(speed);
+        }
+
     </script>
 
 
 </head>
 <body>
 
-<div id="div1">Testing...</div>
-<input type="button" id="button" value="hide it" />
+<h3>Basic JQuery events, effects etc</h3>
+    <a href="#" id="link"><h3>News of Today</h3></a>
+    <div id="div1" style="display:none;">Testing...</div><br />
+
+    <a href="#" onclick="toggle('#div2', 1000)"><h3>News of Yesterday</h3></a>
+    <div id="div2" style="display:none;">Testing 2...</div><br />
+
+    <input type="button" id="button" value="hide it" /><br />
+
+    <input type="button" id="callbackButton" value="Callback Test" /><br />
+    <p>Callback test paragraph</p><br /><br />
+
+
+<h3>Manipulating CSS with JQuery</h3>
+    <p>This is my first P</p>
+    <p>This is my second P</p>
+    <p>This is my third P</p>
+    <input type="button" id="cssButton" value="CSS Test" /><br />
 
 </body>
 </html>

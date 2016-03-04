@@ -1,0 +1,39 @@
+#menu{
+    height: 30px;
+    background-color:#FF9900;
+}
+
+#menu li li:hover{
+    background-color:yellow;
+    cursor: pointer;
+}
+
+#menu ul, #menu li{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu li{
+    float: left;
+    width: 120px;
+    list-style-type: none;
+    line-height: 30px;
+    text-align: center;
+}
+
+#menu li ul{
+    position:absolute;
+    background-color:#ff9900;
+    display:none;
+}
+
+#menu li li{
+    float: none;
+    padding: 2px;
+}
+
+#menu a{
+    color: #000;
+    test-decoration: none;
+}
